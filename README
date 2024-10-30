@@ -1,0 +1,89 @@
+API para Consultar Canciones - Guía para Levantar la API
+
+Este repositorio contiene una API desarrollada en Node.js que permite consultar canciones de una banda musical y guardar canciones como favoritas, utilizando la API de iTunes.
+
+Requisitos Previos
+
+Antes de levantar la API, asegúrate de tener instalados los siguientes componentes en tu sistema:
+
+Node.js (versión 14 o superior)
+
+npm o yarn
+
+Git (para clonar el repositorio)
+
+Pasos para Levantar la API
+
+1. Clonar el Repositorio
+
+Primero, clona este repositorio desde GitHub a tu máquina local:
+
+git clone https://github.com/tu-usuario/tu-repositorio.git
+
+2. Navegar al Directorio del Proyecto
+
+Ingresa al directorio del proyecto clonado:
+
+cd tu-repositorio
+
+3. Instalar Dependencias
+
+Instala las dependencias necesarias usando npm o yarn:
+
+npm install
+
+O si prefieres usar yarn:
+
+yarn install
+
+4. Configurar Variables de Entorno
+
+Crea un archivo .env en el directorio raíz del proyecto para configurar las variables de entorno necesarias. Puedes usar el siguiente formato como ejemplo:
+
+PORT=3000
+
+Asegúrate de definir el puerto en el que la API se ejecutará (puedes cambiar el valor si es necesario).
+
+5. Levantar el Servidor
+
+Ejecuta el siguiente comando para levantar el servidor de la API:
+
+node server.js
+
+La API estará disponible en http://localhost:3000.
+
+6. Probar los Endpoints
+
+Una vez que la API esté levantada, puedes probar los siguientes endpoints:
+
+GET /search_tracks?name={nombre_banda}: Busca canciones de una banda utilizando la API de iTunes.
+
+POST /favoritos: Guarda una canción como favorita. El cuerpo de la solicitud debe tener el siguiente formato:
+
+{
+  "nombre_banda": "Radiohead",
+  "cancion_id": 123, //Debes utilizar el id de la respuesta del endpoint GET /search_tracks
+  "usuario": "juan",
+  "ranking": "5/5"
+}
+
+Puedes usar herramientas como Postman o cURL para realizar pruebas.
+
+
+Tecnologías Utilizadas
+
+Node.js: Entorno de ejecución para el backend.
+
+Express.js: Framework para el desarrollo del servidor.
+
+Axios: Cliente HTTP para realizar solicitudes a la API de iTunes.
+
+NodeCache: Módulo para cachear las respuestas y optimizar las consultas.
+
+Contribuir
+
+Si deseas contribuir al proyecto, puedes hacer un fork del repositorio, crear una nueva rama para tus cambios y enviar un pull request.
+
+Contacto
+
+Para cualquier duda o sugerencia, puedes contactarme en [luisborqueztorreblanca@gmail.com].
